@@ -1,0 +1,11 @@
+#!/bin/bash
+echo "=== Ollama Diagnostics ==="
+echo "OS: $(uname -a)"
+echo "Ollama version: $(ollama --version 2>&1)"
+echo "Port check: $(curl -s http://localhost:11434 || echo 'NOT RUNNING')"
+echo "GPU: $(nvidia-smi --query-gpu=name --format=csv,noheader 2>&1 || echo 'No NVIDIA GPU')"
+echo "Models: $(ollama list 2>&1)"
+echo "Disk: $(df -h ~/.ollama 2>&1 | tail -1)"
+echo "RAM: $(free -h 2>&1 | grep Mem || sysctl hw.memsize)"
+echo "Logs (last 10 lines):"
+journalctl -u ollama -n 10 2>&1 || echo "No systemd logs"
