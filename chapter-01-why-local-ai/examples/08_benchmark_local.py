@@ -25,8 +25,8 @@ def benchmark_local(model, prompt, runs=10):
 # Test with a simple prompt
 prompt = "Say hello in one word."
 
-print("Benchmarking local inference (Gemma2 2B)...")
-results = benchmark_local('gemma2:2b', prompt, runs=20)
+print("Benchmarking local inference (Gemma2 9B)...")
+results = benchmark_local('gemma2:9b', prompt, runs=5)
 
 print(f"\nLatency Statistics (ms):")
 print(f"  Min:    {results['min']:.1f}")

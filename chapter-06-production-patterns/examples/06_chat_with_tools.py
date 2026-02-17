@@ -18,7 +18,7 @@ To use a tool, output JSON: {"tool": "tool_name", "args": {"arg": "value"}}
 """
 
 def chat_with_tools(user_message):
-    response = ollama.chat(model='llama3.1:8b', messages=[
+    response = ollama.chat(model='gemma2:9b', messages=[
         {'role': 'system', 'content': system},
         {'role': 'user', 'content': user_message}
     ])
@@ -36,7 +36,7 @@ def chat_with_tools(user_message):
             result = tools[tool_name](**args)
             
             # Send result back to model
-            return ollama.chat(model='llama3.1:8b', messages=[
+            return ollama.chat(model='gemma2:9b', messages=[
                 {'role': 'system', 'content': system},
                 {'role': 'user', 'content': user_message},
                 {'role': 'assistant', 'content': content},

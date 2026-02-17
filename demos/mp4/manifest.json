@@ -1,0 +1,15 @@
+{
+  "recorded": [
+    "ch01-cost-comparison",
+    "ch02-check-hardware",
+    "ch04-list-models",
+    "ch05-curl-api",
+    "ch05-first-api-call",
+    "ch05-streaming",
+    "ch06-simple-chatbot",
+    "ch06-tool-calling",
+    "ch07-health-check"
+  ],
+  "failed": [],
+  "timestamp": "2026-02-17T16:16:27Z"
+}

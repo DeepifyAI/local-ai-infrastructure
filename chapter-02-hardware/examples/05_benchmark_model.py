@@ -67,13 +67,13 @@ BENCHMARK_PROMPTS = [
 ]
 
 if __name__ == '__main__':
-    models = ['gemma2:2b', 'gemma2:9b']  # Add your models
+    models = ['gemma2:9b']  # Add your models
     
     results = []
     
     for model in models:
         try:
-            result = benchmark_model(model, BENCHMARK_PROMPTS, runs=3)
+            result = benchmark_model(model, BENCHMARK_PROMPTS[:2], runs=2)
             results.append(result)
         except Exception as e:
             print(f"Failed to benchmark {model}: {e}")

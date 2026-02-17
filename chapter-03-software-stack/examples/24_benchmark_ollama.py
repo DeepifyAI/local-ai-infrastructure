@@ -49,7 +49,7 @@ if __name__ == '__main__':
     
     # Test Ollama
     print("Testing Ollama...")
-    results.append(benchmark_ollama('gemma2:2b', prompt))
+    results.append(benchmark_ollama('gemma2:9b', prompt, runs=3))
     
     # Test llama.cpp (if available)
     # results.append(benchmark_llamacpp('models/gemma-2b-q4.gguf', prompt))

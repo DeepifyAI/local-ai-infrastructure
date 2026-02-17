@@ -82,7 +82,7 @@ class OllamaClient:
 
 # Example usage
 if __name__ == '__main__':
-    client = OllamaClient(model='gemma2:9b')
+    client = OllamaClient(model='gemma2:9b', max_retries=2)
     
     response = client.chat(
         message="What's the capital of France?",

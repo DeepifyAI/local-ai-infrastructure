@@ -26,5 +26,5 @@ context = docs[best_match_idx]
 
 # 4. Ask model with context
 prompt = f"Context: {context}\n\nQuestion: {question}"
-response = ollama.generate(model='llama3.1:8b', prompt=prompt)
+response = ollama.generate(model='gemma2:9b', prompt=prompt)
 print(response['response'])

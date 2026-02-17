@@ -20,11 +20,15 @@ def get_gpu_info():
         
         gpus = []
         for line in result.stdout.strip().split('\n'):
-            name, memory = line.split(',')
-            gpus.append({
-                'name': name.strip(),
-                'vram_mb': int(memory.strip().split()[0])
-            })
+            parts = line.split(',')
+            if len(parts) >= 2:
+                name = parts[0].strip()
+                mem_str = parts[1].strip().split()[0]
+                try:
+                    vram_mb = int(mem_str)
+                except ValueError:
+                    vram_mb = mem_str  # e.g. '[N/A]' for some GPU types
+                gpus.append({'name': name, 'vram_mb': vram_mb})
         
         return gpus
     

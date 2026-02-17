@@ -2,7 +2,7 @@
 import ollama
 
 class Agent:
-    def __init__(self, model='llama3.1:8b', system_prompt=''):
+    def __init__(self, model='gemma2:9b', system_prompt=''):
         self.model = model
         self.messages = []
         if system_prompt:
@@ -22,7 +22,9 @@ class Agent:
         self.messages = []
 
 # Usage
-agent = Agent(system_prompt='You are a helpful Python tutor.')
+agent = Agent(system_prompt='You are a concise Python tutor. Keep answers to 2 sentences max.')
 
+print("Q: What is a list comprehension?")
 print(agent.chat('What is a list comprehension?'))
-print(agent.chat('Show me an example'))  # Remembers context
+print("\nQ: Show me a quick example (uses conversation history)")
+print(agent.chat('Show me a one-line example'))  # Remembers context

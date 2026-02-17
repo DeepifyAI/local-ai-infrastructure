@@ -1,0 +1,16 @@
+{
+  "cpu": {
+    "architecture": "aarch64",
+    "processor": "aarch64",
+    "system": "Linux"
+  },
+  "memory": {
+    "total_gb": 119.7
+  },
+  "gpus": [
+    {
+      "name": "NVIDIA GB10",
+      "vram_mb": "[N/A]"
+    }
+  ]
+}

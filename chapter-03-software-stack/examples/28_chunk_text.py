@@ -50,8 +50,8 @@ def process_document(file_path: str) -> dict:
     }
 
 if __name__ == '__main__':
-    # First, pull embedding model
-    os.system('ollama pull nomic-embed-text')
+    # nomic-embed-text model is already installed
+    print("Using nomic-embed-text for embeddings...")
     
     # Example
     with open('test_doc.txt', 'w') as f:
