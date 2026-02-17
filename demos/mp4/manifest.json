@@ -1,15 +1,303 @@
 {
-  "recorded": [
-    "ch01-cost-comparison",
-    "ch02-check-hardware",
-    "ch04-list-models",
-    "ch05-curl-api",
-    "ch05-first-api-call",
-    "ch05-streaming",
-    "ch06-simple-chatbot",
-    "ch06-tool-calling",
-    "ch07-health-check"
-  ],
-  "failed": [],
-  "timestamp": "2026-02-17T16:16:27Z"
+  "version": "2",
+  "recorded_at": "2026-02-17T16:20:00Z",
+  "total": 37,
+  "demos": [
+    {
+      "file": "ch01-benchmark.mp4",
+      "chapter": 1,
+      "title": "Latency Benchmark (5 runs)",
+      "script": "chapter-01-why-local-ai/examples/08_benchmark_local.py",
+      "description": "Benchmarks local Gemma2 9B inference latency across 5 runs, showing min/median/mean/p95/max statistics.",
+      "size_bytes": 15750
+    },
+    {
+      "file": "ch01-benchmark_local.mp4",
+      "chapter": 1,
+      "title": "Local AI Benchmark (20 runs)",
+      "script": "chapter-01-why-local-ai/examples/08_benchmark_local.py",
+      "description": "Extended benchmark run with 20 iterations showing full latency statistics.",
+      "size_bytes": 135402
+    },
+    {
+      "file": "ch01-break-even.mp4",
+      "chapter": 1,
+      "title": "RTX 4090 Break-Even Calculation",
+      "script": "chapter-01-why-local-ai/examples/04_example.py",
+      "description": "Calculates break-even point for a consumer GPU build vs cloud API costs.",
+      "size_bytes": 20033
+    },
+    {
+      "file": "ch01-cost-calculator.mp4",
+      "chapter": 1,
+      "title": "Cloud vs Local Cost Calculator",
+      "script": "chapter-01-why-local-ai/examples/03_example.py",
+      "description": "Computes monthly/annual cloud API costs and DGX Spark electricity costs with break-even analysis.",
+      "size_bytes": 33464
+    },
+    {
+      "file": "ch01-cost-comparison.mp4",
+      "chapter": 1,
+      "title": "Cost Comparison Overview",
+      "script": "chapter-01-why-local-ai/examples/03_example.py",
+      "description": "Overview of cloud vs local AI cost comparison.",
+      "size_bytes": 76938
+    },
+    {
+      "file": "ch01-example.mp4",
+      "chapter": 1,
+      "title": "Chapter 1 Example",
+      "script": "chapter-01-why-local-ai/examples/",
+      "description": "General chapter 1 example.",
+      "size_bytes": 102230
+    },
+    {
+      "file": "ch01-latency-test.mp4",
+      "chapter": 1,
+      "title": "Cloud vs Local Latency Test",
+      "script": "chapter-01-why-local-ai/examples/02_example.py",
+      "description": "Simulates cloud API latency vs real local Ollama inference time, showing speed advantage of local AI.",
+      "size_bytes": 23722
+    },
+    {
+      "file": "ch01-local-inference.mp4",
+      "chapter": 1,
+      "title": "First Local Inference",
+      "script": "chapter-01-why-local-ai/examples/07_example.py",
+      "description": "Simple hello-world local inference: asks Gemma2 9B to explain local AI privacy in one sentence.",
+      "size_bytes": 36546
+    },
+    {
+      "file": "ch01-monitor_network.mp4",
+      "chapter": 1,
+      "title": "Network Privacy Monitor",
+      "script": "chapter-01-why-local-ai/examples/09_monitor_network.py",
+      "description": "Demonstrates that local Ollama inference generates zero external network traffic.",
+      "size_bytes": 90756
+    },
+    {
+      "file": "ch02-check-hardware.mp4",
+      "chapter": 2,
+      "title": "Hardware Check",
+      "script": "chapter-02-hardware/examples/03_get_gpu_info.py",
+      "description": "Detects CPU architecture, RAM, and GPU information on the current system.",
+      "size_bytes": 44486
+    },
+    {
+      "file": "ch02-hardware-detect.mp4",
+      "chapter": 2,
+      "title": "Hardware Detection",
+      "script": "chapter-02-hardware/examples/03_get_gpu_info.py",
+      "description": "Full hardware detection showing NVIDIA GB10 GPU, 120GB RAM, ARM64 architecture on DGX Spark.",
+      "size_bytes": 29312
+    },
+    {
+      "file": "ch02-model-benchmark.mp4",
+      "chapter": 2,
+      "title": "Model Inference Benchmark",
+      "script": "chapter-02-hardware/examples/05_benchmark_model.py",
+      "description": "Standard AI benchmark measuring average latency, tokens/sec, and TTFT for Gemma2 9B.",
+      "size_bytes": 10701
+    },
+    {
+      "file": "ch02-vram-calculator.mp4",
+      "chapter": 2,
+      "title": "VRAM Requirements Calculator",
+      "script": "chapter-02-hardware/examples/04_calculate_vram.py",
+      "description": "Shows which AI models fit in 24GB (RTX 4090) and 192GB (Mac Studio M4 Ultra) across 4bit/8bit/fp16 precisions.",
+      "size_bytes": 106274
+    },
+    {
+      "file": "ch03-arm64-packages.mp4",
+      "chapter": 3,
+      "title": "ARM64 Package Compatibility",
+      "script": "chapter-03-software-stack/examples/19_check_package.py",
+      "description": "Checks AI Python packages for ARM64 compatibility, showing aarch64 architecture guidance.",
+      "size_bytes": 24999
+    },
+    {
+      "file": "ch03-benchmark.mp4",
+      "chapter": 3,
+      "title": "Ollama Runtime Benchmark",
+      "script": "chapter-03-software-stack/examples/24_benchmark_ollama.py",
+      "description": "Benchmarks Ollama runtime with 3 runs on Gemma2 9B, showing average inference latency.",
+      "size_bytes": 6362
+    },
+    {
+      "file": "ch03-embeddings.mp4",
+      "chapter": 3,
+      "title": "Embedding Pipeline",
+      "script": "chapter-03-software-stack/examples/28_chunk_text.py",
+      "description": "Chunks a document into 500-word segments and generates 768-dimensional embeddings using nomic-embed-text.",
+      "size_bytes": 9820
+    },
+    {
+      "file": "ch03-ollama-client.mp4",
+      "chapter": 3,
+      "title": "Production Ollama Client",
+      "script": "chapter-03-software-stack/examples/27___init__.py",
+      "description": "Demonstrates a production-grade Ollama client with retry logic and conversation history across two queries.",
+      "size_bytes": 67290
+    },
+    {
+      "file": "ch03-ollama-hello.mp4",
+      "chapter": 3,
+      "title": "Simple Ollama Hello",
+      "script": "chapter-03-software-stack/examples/17_example.py",
+      "description": "Minimal Ollama Python client call — sends 'Hello!' to Gemma2 9B and prints the response.",
+      "size_bytes": 23805
+    },
+    {
+      "file": "ch04-curl-api.mp4",
+      "chapter": 4,
+      "title": "cURL REST API Call",
+      "script": "chapter-04-getting-started/examples/06_curl.sh",
+      "description": "Calls Ollama's /api/generate endpoint via cURL to get a one-sentence explanation of local AI.",
+      "size_bytes": 95581
+    },
+    {
+      "file": "ch04-list-models.mp4",
+      "chapter": 4,
+      "title": "List Models",
+      "script": "chapter-04-getting-started/examples/05_ollama.sh",
+      "description": "Lists installed Ollama models and demonstrates model management.",
+      "size_bytes": 72273
+    },
+    {
+      "file": "ch04-ollama-list.mp4",
+      "chapter": 4,
+      "title": "Ollama Models and System Info",
+      "script": "chapter-04-getting-started/examples/05_ollama.sh",
+      "description": "Shows all installed models (gemma2:9b, llama3.1:70b, nomic-embed-text, etc.) plus system architecture info.",
+      "size_bytes": 57110
+    },
+    {
+      "file": "ch04-rest-api.mp4",
+      "chapter": 4,
+      "title": "Python REST API Call",
+      "script": "chapter-04-getting-started/examples/07_example.py",
+      "description": "Uses Python requests to call Ollama's /api/generate endpoint directly.",
+      "size_bytes": 18019
+    },
+    {
+      "file": "ch05-curl-api.mp4",
+      "chapter": 5,
+      "title": "cURL Generate API",
+      "script": "chapter-05-ollama-deep-dive/examples/01_curl.sh",
+      "description": "Raw cURL call to Ollama's generate endpoint with Gemma2 9B.",
+      "size_bytes": 62442
+    },
+    {
+      "file": "ch05-curl-embeddings.mp4",
+      "chapter": 5,
+      "title": "Embeddings via REST API",
+      "script": "chapter-05-ollama-deep-dive/examples/03_curl_embeddings.py",
+      "description": "Generates a 768-dimensional embedding vector for a text string using nomic-embed-text via the REST API.",
+      "size_bytes": 27117
+    },
+    {
+      "file": "ch05-first-api-call.mp4",
+      "chapter": 5,
+      "title": "First API Call",
+      "script": "chapter-05-ollama-deep-dive/examples/04_example.py",
+      "description": "First Ollama API call in Python — asks why local AI is better for privacy.",
+      "size_bytes": 25903
+    },
+    {
+      "file": "ch05-multi-turn-chat.mp4",
+      "chapter": 5,
+      "title": "Multi-turn Chat API",
+      "script": "chapter-05-ollama-deep-dive/examples/02_curl_chat.py",
+      "description": "Demonstrates multi-turn conversation using Ollama's /api/chat endpoint with message history.",
+      "size_bytes": 18722
+    },
+    {
+      "file": "ch05-ollama-chat.mp4",
+      "chapter": 5,
+      "title": "Ollama Python SDK Chat",
+      "script": "chapter-05-ollama-deep-dive/examples/04_example.py",
+      "description": "Uses the official Ollama Python SDK to send a chat message and receive a response.",
+      "size_bytes": 46857
+    },
+    {
+      "file": "ch05-openai-compat.mp4",
+      "chapter": 5,
+      "title": "OpenAI SDK Compatibility",
+      "script": "chapter-05-ollama-deep-dive/examples/07_example.py",
+      "description": "Shows how to use the OpenAI Python SDK pointed at a local Ollama server — drop-in replacement.",
+      "size_bytes": 24535
+    },
+    {
+      "file": "ch05-streaming.mp4",
+      "chapter": 5,
+      "title": "Streaming Token Output",
+      "script": "chapter-05-ollama-deep-dive/examples/05_example.py",
+      "description": "Streams tokens in real-time from Gemma2 9B — watch the poem appear word by word.",
+      "size_bytes": 72772
+    },
+    {
+      "file": "ch05-system-prompt.mp4",
+      "chapter": 5,
+      "title": "System Prompt Roles",
+      "script": "chapter-05-ollama-deep-dive/examples/06_example.py",
+      "description": "Demonstrates system prompt usage — assigns 'concise technical writer' role, asks for CUDA explanation.",
+      "size_bytes": 37919
+    },
+    {
+      "file": "ch06-agent-memory.mp4",
+      "chapter": 6,
+      "title": "Agent with Conversation Memory",
+      "script": "chapter-06-production-patterns/examples/03___init__.py",
+      "description": "Agent class that maintains conversation history — asks about list comprehensions then requests an example (uses context).",
+      "size_bytes": 22405
+    },
+    {
+      "file": "ch06-rag-demo.mp4",
+      "chapter": 6,
+      "title": "RAG: Retrieval-Augmented Generation",
+      "script": "chapter-06-production-patterns/examples/05_example.py",
+      "description": "Full RAG pipeline: embeds docs with nomic-embed-text, finds most similar to query via cosine similarity, answers with context.",
+      "size_bytes": 32896
+    },
+    {
+      "file": "ch06-routing-agent.mp4",
+      "chapter": 6,
+      "title": "Multi-Agent Router",
+      "script": "chapter-06-production-patterns/examples/07_route.py",
+      "description": "RouterAgent classifies a query as technical/creative/factual, then dispatches to the appropriate specialist agent.",
+      "size_bytes": 23442
+    },
+    {
+      "file": "ch06-simple-chatbot.mp4",
+      "chapter": 6,
+      "title": "Simple Chatbot",
+      "script": "chapter-06-production-patterns/examples/03___init__.py",
+      "description": "Simple chatbot demonstrating conversation patterns with local AI.",
+      "size_bytes": 123469
+    },
+    {
+      "file": "ch06-tool-calling.mp4",
+      "chapter": 6,
+      "title": "Tool Calling (Function Calls)",
+      "script": "chapter-06-production-patterns/examples/06_chat_with_tools.py",
+      "description": "Model receives tool definitions, outputs JSON tool call, executes get_weather(), returns final answer.",
+      "size_bytes": 22991
+    },
+    {
+      "file": "ch07-diagnostics.mp4",
+      "chapter": 7,
+      "title": "Ollama Diagnostics Script",
+      "script": "chapter-07-troubleshooting/examples/12_echo.sh",
+      "description": "One-shot diagnostic: shows OS, Ollama version, port status, GPU, installed models, disk, RAM, and recent logs.",
+      "size_bytes": 187986
+    },
+    {
+      "file": "ch07-health-check.mp4",
+      "chapter": 7,
+      "title": "Ollama Health Check",
+      "script": "chapter-07-troubleshooting/examples/",
+      "description": "Health check script verifying Ollama is running and responsive.",
+      "size_bytes": 36690
+    }
+  ]
 }
