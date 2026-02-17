@@ -1,0 +1,27 @@
+---
+title: "Ollama API — Request/Response Flow"
+---
+sequenceDiagram
+    participant App as 🐍 Your App
+    participant API as 🔌 Ollama API<br/>:11434
+    participant Engine as ⚙️ Inference Engine
+    participant Model as 🧠 gemma2:9b
+    participant GPU as 🖥️ GPU/CPU
+
+    App->>API: POST /api/generate<br/>{"model": "gemma2:9b", "prompt": "Hello"}
+    API->>Engine: Load model (if not cached)
+    Engine->>GPU: Allocate VRAM
+    GPU-->>Engine: Ready
+    
+    loop Token Generation
+        Engine->>Model: Forward pass
+        Model->>GPU: Matrix multiply
+        GPU-->>Model: Logits
+        Model-->>Engine: Next token
+        Engine-->>API: Token chunk (stream)
+        API-->>App: {"response": "Hi", "done": false}
+    end
+    
+    API-->>App: {"response": "!", "done": true,<br/>"eval_count": 42, "eval_duration": 1.2s}
+    
+    Note over App,GPU: All of this happens on YOUR machine.<br/>Nothing touches the internet.

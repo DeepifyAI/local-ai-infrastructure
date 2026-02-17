@@ -1,0 +1,31 @@
+---
+title: "Troubleshooting Decision Tree"
+---
+flowchart TD
+    A["🔴 Something's wrong"] --> B{"Ollama running?"}
+    
+    B -->|No| C["ollama serve"]
+    B -->|Yes| D{"Model loaded?"}
+    
+    D -->|No| E["ollama pull model-name"]
+    D -->|Yes| F{"Getting responses?"}
+    
+    F -->|No response| G{"Port 11434 open?"}
+    G -->|No| H["Check: lsof -i :11434<br/>Kill conflicting process"]
+    G -->|Yes| I["Check logs:<br/>journalctl -u ollama"]
+    
+    F -->|Slow| J{"GPU detected?"}
+    J -->|No| K["Check: nvidia-smi<br/>Install CUDA drivers"]
+    J -->|Yes| L{"Enough VRAM?"}
+    L -->|No| M["Use smaller model<br/>or quantized version"]
+    L -->|Yes| N["Check GPU utilization:<br/>nvidia-smi -l 1"]
+    
+    F -->|Errors| O{"OOM Error?"}
+    O -->|Yes| M
+    O -->|No| P["Check model format<br/>matches your hardware"]
+
+    C & E & H & I & K & M & N & P --> Q["✅ Fixed!"]
+
+    style A fill:#EF5350,stroke:#C62828,color:#fff
+    style Q fill:#4CAF50,stroke:#2E7D32,color:#fff
+    style M fill:#FF9800,stroke:#E65100,color:#fff

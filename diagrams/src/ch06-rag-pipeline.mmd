@@ -1,0 +1,22 @@
+---
+title: "RAG Pipeline — Query Your Own Documents"
+---
+flowchart LR
+    subgraph Ingest["📥 Ingest (one-time)"]
+        A[Your Documents<br/>PDF, MD, TXT] --> B[Chunk Text<br/>~500 tokens each]
+        B --> C[Embed with<br/>nomic-embed-text]
+        C --> D[(ChromaDB<br/>Vector Store)]
+    end
+
+    subgraph Query["🔍 Query (every request)"]
+        E[User Question] --> F[Embed Question]
+        F --> G[Similarity Search<br/>Top 5 chunks]
+        D --> G
+        G --> H[Build Prompt<br/>Question + Context]
+        H --> I[Ollama gemma2:9b]
+        I --> J[Answer with<br/>Source Citations]
+    end
+
+    style Ingest fill:#E8F5E9,stroke:#4CAF50,stroke-width:2px
+    style Query fill:#E3F2FD,stroke:#2196F3,stroke-width:2px
+    style D fill:#FFF9C4,stroke:#F9A825,stroke-width:2px

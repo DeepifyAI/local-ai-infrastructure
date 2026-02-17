@@ -21,6 +21,23 @@ The complete guide to running LLMs locally. Three hardware tiers, full software 
 | [7. Troubleshooting](chapter-07-troubleshooting/) | 10+ common issues with fixes | 5 |
 | [8. What's Next](chapter-08-whats-next/) | Four paths forward | 2 |
 
+## Architecture & Process Maps
+
+Visual diagrams for every key concept — open the PNGs in GitHub or import SVGs into your own docs.
+
+| Diagram | Chapter | Preview |
+|---------|---------|---------|
+| [Cloud vs Local](diagrams/png/ch01-cloud-vs-local.png) | 1 | Where your data goes |
+| [Hardware Tiers](diagrams/png/ch02-hardware-tiers.png) | 2 | What can you run? |
+| [Software Stack](diagrams/png/ch03-software-stack.png) | 3 | Full stack layers |
+| [Getting Started](diagrams/png/ch04-getting-started-flow.png) | 4 | Zero to first response |
+| [API Flow](diagrams/png/ch05-ollama-api-flow.png) | 5 | Request/response sequence |
+| [Production Patterns](diagrams/png/ch06-production-patterns.png) | 6 | 8 patterns overview |
+| [RAG Pipeline](diagrams/png/ch06-rag-pipeline.png) | 6 | Document Q&A flow |
+| [Troubleshooting](diagrams/png/ch07-troubleshooting-tree.png) | 7 | Decision tree |
+
+> Mermaid source files in [`diagrams/src/`](diagrams/src/) — edit and re-render with `bash diagrams/render.sh`
+
 ## Quick Start
 
 ```bash

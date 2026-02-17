@@ -1,0 +1,33 @@
+---
+title: "8 Production Patterns"
+---
+graph TB
+    subgraph Patterns["Production Patterns — Pick Your Path"]
+        direction TB
+        
+        P1["1️⃣ Stateless API<br/>Simple request → response"]
+        P2["2️⃣ Conversational<br/>Memory + context window"]
+        P3["3️⃣ RAG Pipeline<br/>Query your documents"]
+        P4["4️⃣ Tool Use<br/>Function calling + actions"]
+        P5["5️⃣ Multi-Agent<br/>Agents collaborating"]
+        P6["6️⃣ Streaming<br/>Real-time token output"]
+        P7["7️⃣ Model Fallback<br/>Chain models for reliability"]
+        P8["8️⃣ Batch Processing<br/>Process docs at scale"]
+    end
+
+    P1 -->|"Add memory"| P2
+    P2 -->|"Add documents"| P3
+    P3 -->|"Add actions"| P4
+    P4 -->|"Add agents"| P5
+    P1 -->|"Add streaming"| P6
+    P1 -->|"Add reliability"| P7
+    P1 -->|"Add scale"| P8
+
+    style P1 fill:#E3F2FD,stroke:#1976D2
+    style P2 fill:#E8F5E9,stroke:#388E3C
+    style P3 fill:#FFF3E0,stroke:#F57C00
+    style P4 fill:#F3E5F5,stroke:#7B1FA2
+    style P5 fill:#FCE4EC,stroke:#C62828
+    style P6 fill:#E0F7FA,stroke:#00838F
+    style P7 fill:#FFF9C4,stroke:#F9A825
+    style P8 fill:#EFEBE9,stroke:#5D4037

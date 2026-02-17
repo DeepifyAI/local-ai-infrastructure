@@ -1,0 +1,24 @@
+---
+title: "Cloud vs Local AI — Where Your Data Goes"
+---
+graph LR
+    subgraph Cloud["☁️ Cloud AI"]
+        direction TB
+        A[Your Prompt] -->|Internet| B[OpenAI / Anthropic Server]
+        B -->|Internet| C[Response]
+        B -.->|Stored| D[(Their Logs)]
+        B -.->|Billed| E[💳 $0.03/1K tokens]
+    end
+
+    subgraph Local["🏠 Local AI"]
+        direction TB
+        F[Your Prompt] -->|localhost| G[Ollama on YOUR GPU]
+        G -->|localhost| H[Response]
+        G -.->|Never leaves| I[🔒 Your Machine]
+        G -.->|Cost| J[⚡ Electricity only]
+    end
+
+    style Cloud fill:#fee,stroke:#c33,stroke-width:2px
+    style Local fill:#efe,stroke:#3a3,stroke-width:2px
+    style D fill:#fcc,stroke:#c33
+    style I fill:#cfc,stroke:#3a3

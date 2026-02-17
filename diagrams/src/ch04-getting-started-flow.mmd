@@ -1,0 +1,29 @@
+---
+title: "Getting Started — From Zero to First Response"
+---
+flowchart TD
+    A["🚀 Start Here"] --> B{"What OS?"}
+    
+    B -->|macOS| C1["brew install ollama"]
+    B -->|Linux| C2["curl -fsSL ollama.ai/install.sh | sh"]
+    B -->|Windows| C3["Download from ollama.ai<br/>or use WSL"]
+    
+    C1 & C2 & C3 --> D["ollama serve"]
+    
+    D --> E["ollama pull gemma2:9b<br/>⏳ ~5GB download"]
+    
+    E --> F{"How to talk to it?"}
+    
+    F -->|Terminal| G1["ollama run gemma2:9b<br/>💬 Interactive chat"]
+    F -->|curl| G2["curl localhost:11434/api/generate<br/>🔌 Raw API"]
+    F -->|Python| G3["from ollama import chat<br/>🐍 Python SDK"]
+    F -->|Web UI| G4["Open WebUI<br/>🌐 ChatGPT-style interface"]
+    
+    G1 & G2 & G3 & G4 --> H["✅ You're running local AI!"]
+    
+    H --> I["Next: Chapter 5<br/>Ollama Deep Dive"]
+
+    style A fill:#4CAF50,stroke:#2E7D32,color:#fff
+    style H fill:#4CAF50,stroke:#2E7D32,color:#fff
+    style E fill:#FF9800,stroke:#E65100,color:#fff
+    style I fill:#2196F3,stroke:#1565C0,color:#fff

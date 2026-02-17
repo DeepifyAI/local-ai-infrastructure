@@ -1,0 +1,31 @@
+---
+title: "Hardware Tiers — What Can You Run?"
+---
+graph LR
+    subgraph Tier1["💻 Tier 1: Laptop"]
+        T1A["8-16GB RAM"]
+        T1B["CPU or iGPU"]
+        T1C["Models: 3B-7B<br/>gemma2:2b, phi3"]
+        T1D["Speed: 5-15 tok/s"]
+    end
+
+    subgraph Tier2["🖥️ Tier 2: Desktop"]
+        T2A["16-32GB RAM"]
+        T2B["RTX 3060-4090<br/>8-24GB VRAM"]
+        T2C["Models: 7B-13B<br/>gemma2:9b, llama3"]
+        T2D["Speed: 30-80 tok/s"]
+    end
+
+    subgraph Tier3["🏗️ Tier 3: Workstation"]
+        T3A["64-128GB+ RAM"]
+        T3B["Multi-GPU or<br/>DGX / Mac Studio"]
+        T3C["Models: 70B+<br/>llama3.1:70b"]
+        T3D["Speed: 20-50 tok/s"]
+    end
+
+    Tier1 -->|"Upgrade GPU"| Tier2
+    Tier2 -->|"Go big"| Tier3
+
+    style Tier1 fill:#E3F2FD,stroke:#1976D2,stroke-width:2px
+    style Tier2 fill:#E8F5E9,stroke:#388E3C,stroke-width:2px
+    style Tier3 fill:#FFF3E0,stroke:#E65100,stroke-width:2px

@@ -1,0 +1,47 @@
+---
+title: "Local AI Software Stack"
+---
+graph TB
+    subgraph App["🖥️ Your Application"]
+        A1[Python Script] 
+        A2[Web App]
+        A3[CLI Tool]
+    end
+
+    subgraph API["🔌 API Layer"]
+        B1[Ollama API :11434]
+        B2[OpenAI-Compatible Endpoint]
+    end
+
+    subgraph Runtime["⚙️ Inference Runtime"]
+        C1[llama.cpp / GGML]
+        C2[Model Quantization<br/>Q4_K_M / Q8_0]
+    end
+
+    subgraph Models["🧠 Models"]
+        D1[Gemma2 9B]
+        D2[LLaMA 3.1 70B]
+        D3[Nomic Embed Text]
+        D4[Your Custom Model]
+    end
+
+    subgraph Hardware["🔧 Hardware"]
+        E1[GPU / CPU]
+        E2[RAM / VRAM]
+        E3[Storage SSD]
+    end
+
+    A1 & A2 & A3 --> B1
+    B1 --> B2
+    B2 --> C1
+    C1 --> C2
+    C2 --> D1 & D2 & D3 & D4
+    D1 & D2 & D3 & D4 --> E1
+    E1 --> E2
+    E2 --> E3
+
+    style App fill:#e8f4fd,stroke:#2196F3,stroke-width:2px
+    style API fill:#fff3e0,stroke:#FF9800,stroke-width:2px
+    style Runtime fill:#f3e5f5,stroke:#9C27B0,stroke-width:2px
+    style Models fill:#e8f5e9,stroke:#4CAF50,stroke-width:2px
+    style Hardware fill:#fce4ec,stroke:#E91E63,stroke-width:2px
